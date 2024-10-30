@@ -6,6 +6,11 @@ import java.io.*;
 public class Marca implements Serializable{
     private String nombre;
 
+    //Constructor para asignar valores iniciales
+    public Marca(String nombre){
+        this.nombre = nombre;
+    }
+
     //Creamos un ArrayList para añadir todos los procesadores a la marca y clasificarlos
     private ArrayList<Procesador> procesadores = new ArrayList();
 
@@ -26,6 +31,7 @@ public class Marca implements Serializable{
         return procesadores.get(i);
     }
     //Método para modificar los datos de los procesadores ¡EN PROCESO! ¡HAY QUE REVISAR!
+
     public Marca modProcesador(Procesador procesador){
         procesadores.remove(procesador);
         procesadores.add(procesador);

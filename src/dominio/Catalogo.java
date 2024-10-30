@@ -19,6 +19,7 @@ public class Catalogo implements Serializable{
         marcas.remove(marca);
         return this;
     }
+
     //Métodos setter y getter
     public Catalogo setNombre(String nombre){
         this.nombre = "Catálogo";
@@ -58,6 +59,7 @@ public class Catalogo implements Serializable{
             ObjectOutputStream oo = new ObjectOutputStream(new FileOutputStream("catalogo.jar"));
             oo.writeObject(this);
             oo.close();
+            System.out.print("comprobación Catalogo");
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("La función de guardado no se ha ejecutado correctamente. Revise el análisis realizado por el programa y vuelva a intetarlo.");
@@ -86,4 +88,5 @@ public class Catalogo implements Serializable{
                 .append(getPrecio());
         return datos.toString();
         }
-    }
+
+}
