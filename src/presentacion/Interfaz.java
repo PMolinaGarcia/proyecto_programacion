@@ -4,23 +4,25 @@ import java.util.*;
 import java.io.*;
 
 /**
- * Esta clase representa el interfaz que interactua con el usuario. Implementa Serializable para utilizar los toString del resto de clases
+ * Esta clase representa el interfaz que interactúa con el usuario.
+ * Implementa Serializable para utilizar los toString del resto de clases.
  */
 public class Interfaz implements Serializable {
 
     /**
-     * Creacion de un parametro c de tipo catalogo
+     * Definición de un atributo c de tipo Catalogo.
      */
     private Catalogo c = new Catalogo();
 
     /**
-     * Abreviacion del metodo para escanear mediante un atributo
+     * Abreviación del método para escanear mediante un atributo.
      */
     //Abreviación del método para escanear
     private Scanner sc = new Scanner(System.in);
 
     /**
-     * Creacion de un metodo c que abrevie en c la funcion de inspeccionar
+     * Constructor de la clase Interfaz para asignar un valor inicial al atributo c.
+     * El valor viene dado por la inspección realizada en la clase Catalogo.
      */
     //Para leer todo lo del archivo y que se asigne a un objeto c de Catalogo
     public Interfaz() {
@@ -28,7 +30,7 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Funcion que ejecuta el guardado de los datos
+     * Función que ejecuta el guardado de los datos.
      */
     //Para ejecutar el guardado de datos
     public void guardar_datos() {
@@ -36,14 +38,16 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Metodo de ayuda que imprime todas las opciones disponibles en el programa
+     * Método de ayuda que imprime todas las opciones disponibles en el programa.
      */
     public static void ayuda() {
         System.out.println("Tiene las siguientes opciones disponibles: \n addProcesador: para anniadir un procesador al catalogo. \n addMarca: para anniadir una marca en el catalogo. \n guardar: para guardar los datos en un archivo de guardado. \n leer: lectura inicial. \n elimProcesador: elimina un procesador. \n elimMarca: elimina una marca. \n lista: para mostrar por pantalla las marcas, procesadores y precios disponibles antes de guardar. \n exit: para salir y guardar los datos en un archivo de creacion automatica. \n");
     }
 
     /**
-     * Metodo para anniadir marcas
+     * Método para añadir marcas.
+     * Se escribe un texto a continuación del cual podemos escribir el nombre de la marca.
+     * El scanner lee el valor y se imprime por pantalla.
      */
     //Método para añadir marcas. Se escribe un texto a continuación del cual podemos escribir el nombre de la marca. El scanner lee el valor
     public void anniadirMarca() {
@@ -54,7 +58,7 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Metodo para eliminar marcas
+     * Método para eliminar marcas a partir de su posición.
      */
     public void elimMarca() {
         System.out.print("Las marcas son: \n");
@@ -70,7 +74,9 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Metodo para anniadir procesadores
+     * Método para añadir procesadores a partir de los datos introducidos por el usuario.
+     * Los datos son leídos por el escáner.
+     * Hay que especificar la marca previamente.
      */
     public void anniadirProcesador() {
         System.out.println("Las marcas disponibles son: \n");
@@ -94,7 +100,8 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Metodo para eliminar procesadores
+     * Método para eliminar procesadores a partir de la posición de estos.
+     * Hay que especificar la marca previamente.
      */
     public void elimProcesador() {
         System.out.println("Las marcas disponibles son: \n");
@@ -117,7 +124,7 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Metodo para leer todos los datos del catalogo
+     * Método para leer todos los datos del catálogo.
      */
     public void leer() {
 
@@ -152,9 +159,9 @@ public class Interfaz implements Serializable {
 
 
     /**
-     * Metodo para que el programa lea la orden que le pasa el usuario
+     * Método para que el programa lea la orden que le pasa el usuario.
      *
-     * @return la orden introducida por el usuario
+     * @return La orden introducida por el usuario.
      */
     public String[] leerOrden() {
         System.out.print("?>");
@@ -163,10 +170,10 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Metodo booleano que indica al programa como responder segun la instruccion introducida por el usuario
+     * Método booleano que indica al programa como responder según la instrucción introducida por el usuario.
      *
-     * @param orden orden introducida por el usuario mediante la terminal
-     * @return el valor de verdad. Si es falso, deja de ejecutarse el programa. Si es verdadero, se mantiene funcionando
+     * @param orden Orden introducida por el usuario mediante la terminal.
+     * @return El valor de verdad. Si es falso, deja de ejecutarse el programa. Si es verdadero, se mantiene funcionando.
      */
 //Ahora necesitamos un boolean que asegure la ejecución del programa
 

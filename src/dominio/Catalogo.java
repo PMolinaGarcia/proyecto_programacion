@@ -3,26 +3,26 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Esta clase representa el catalogo total de los productos ofrecidos. Implementa Serializable para el toString final
+ * Esta clase representa el catálogo total de los productos ofrecidos. Implementa Serializable para el toString final.
  */
 //Creamos la clase Catalogo, que será la que contenga a todo
 public class Catalogo implements Serializable{
     /**
-     * EL unico atributo que tiene el catalogo es su nombre
+     * Se define el nombre del catálogo.
      */
     private String nombre;
 
     /**
-     * Se crea un ArrayList que contenga las marcas
+     * Se crea un ArrayList que contenga las marcas.
      */
     //Creamos un ArrayList que contenga lo anterior
     private ArrayList<Marca> marcas = new ArrayList<Marca>();
 
     /**
-     * Metodo para anniadir marcas al catalogo
+     * Método para añadir marcas al catálogo.
      *
-     * @param marca la marca que se va a anniadir al catalogo
-     * @return la marca anniadida
+     * @param marca La marca que se va a añadir al catálogo.
+     * @return La marca añadida.
      */
     //El método para añadir marcas al catálogo
     public Catalogo addMarca(Marca marca){
@@ -31,10 +31,10 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * Metodo para eliminar marcas del catalogo
+     * Método para eliminar marcas del catálogo.
      *
-     * @param marca la marca que se va a eliminar
-     * @return
+     * @param marca La marca que se va a eliminar.
+     * @return La marca eliminada.
      */
     //El método para eliminar marcas del catálogo
     public Catalogo elimMarca(Marca marca){
@@ -43,10 +43,10 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * Metodo setter del nombre del catalogo
+     * Método setter del nombre del catálogo para asignar un valor al atributo nombre.
      *
-     * @param nombre nuevo nombre del catalogo
-     * @return nombre del catalogo
+     * @param nombre Nuevo nombre del catálogo.
+     * @return El nombre del catálogo.
      */
     //Métodos setter y getter
     public Catalogo setNombre(String nombre){
@@ -55,18 +55,18 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * Metodo getter del nombre del catalogo
+     * Método getter del nombre del catálogo.
      *
-     * @return nombre del catalogo
+     * @return El nombre del catálogo.
      */
     public String getNombre(){
         return nombre;
     }
 
     /**
-     * Llamada al ArrayList
+     * Llamada al ArrayList.
      *
-     * @return las marcas que tiene el ArrayList
+     * @return Las marcas que tiene el ArrayList.
      */
     //Llamamos al ArrayList para que me devuelva todo lo que contiene
     public ArrayList<Marca> getMarcas(){
@@ -74,9 +74,9 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * Metodo para saber la cantidad de marcas que hay
+     * Método para saber la cantidad de marcas que hay.
      *
-     * @return el tamannio del ArrayList de marcas. Es decir, la cantidad de marcas presentes
+     * @return El tamaño del ArrayList de marcas; es decir, la cantidad de marcas presentes.
      */
     //Queremos saber cuántas marcas hay
     public int cantidadMarcas(){
@@ -84,10 +84,10 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * Metodo para obtener la marca correspondiente a la posicion i
+     * Método para obtener la marca correspondiente a la posición i.
      *
-     * @param i el indice de posicion dentro del ArrayList
-     * @return la marca que ocupa la posicion i
+     * @param i El índice de posición dentro del ArrayList.
+     * @return La marca que ocupa la posición i.
      */
     //Si queremos un valor de una posición concreta
     public Marca getMarca(int i){
@@ -95,9 +95,9 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * Metodo para calcular el precio total de todo el catalogo
+     * Método para calcular el precio total de todo el catálogo.
      *
-     * @return precio total de todos los articulos del catalogo
+     * @return El precio total de todos los artículos del catálogo.
      */
     //Ahora calcularemos el precio total de todo el catálogo
     public int getPrecio(){
@@ -109,7 +109,10 @@ public class Catalogo implements Serializable{
         }
 
     /**
-     * Metodo para guardar los datos del programa en un archivo de extension dat
+     * Método para guardar los datos del programa en un archivo de extension dat.
+     * Se utiliza un try and catch para manejar las posibles excepciones que puedan darse y dar un mensaje de error.
+     * Si no funciona correctamente el programa, se muestran los orígenes del error.
+     * Esto puede ayudar a solucionar el problema.
      */
     //El siguiente método sirve para guardar todos los datos en un archivo. Consideramos que pueden existir excepciones (por ejemplo, que alguien introduzca mal un dato), entonces, mediante try and catch reconducimos la excepción a donde nos interesa; en este caso, da un mensaje de error. Esto también ayuda al programador a saber si funciona el código y dónde falla.
     public void guardar_datos(){
@@ -125,9 +128,10 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * El metodo para inspeccionar los datos
+     * El método para inspeccionar los datos.
+     * Se utiliza un try and catch para manejar las posibles excepciones que puedan darse.
      *
-      * @return un nuevo objeto de tipo Catalogo con los datos
+      * @return Un nuevo objeto de tipo Catalogo con los datos.
      */
     //Ya tenemos el método para guardar, pero necesitamos uno para leer y ver el contenido que hay.
     public static Catalogo inspeccionar(){
@@ -143,9 +147,10 @@ public class Catalogo implements Serializable{
     }
 
     /**
-     * EL metodo toString con todos los datos del catalogo. Se utiliza un StringBuilder
+     * El método toString con todos los datos del catálogo.
+     * Se utiliza un StringBuilder.
      *
-     * @return todos los datos del catalogo
+     * @return Todos los datos del catálogo.
      */
     //El método to String
     public String toString(){
