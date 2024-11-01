@@ -62,7 +62,7 @@ public class Marca implements Serializable{
         datos.append("-"+nombre + ". ")
                 .append("Precio total de todos los procesadores de la marca: " + getPrecio() + " euros\n")
                 .append("\n")
-                .append("Procesadores disponibles en esta marca: \n")
+                .append("Procesadores disponibles de esta marca: \n")
                 .append(procesadores.toString())
                 .append("\n\n");
         return datos.toString();

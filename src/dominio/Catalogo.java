@@ -22,7 +22,7 @@ public class Catalogo implements Serializable{
 
     //Métodos setter y getter
     public Catalogo setNombre(String nombre){
-        this.nombre = "Catálogo";
+        this.nombre = "Catalogo";
         return this;
     }
     public String getNombre(){
@@ -61,7 +61,7 @@ public class Catalogo implements Serializable{
             oo.close();
         }catch(Exception e){
             e.printStackTrace();
-            System.out.println("La función de guardado no se ha ejecutado correctamente. Revise el análisis realizado por el programa y vuelva a intetarlo.");
+            System.out.println("La funcion de guardado no se ha ejecutado correctamente. Revise el analisis realizado por el programa y vuelva a intentarlo.");
 
         }
     }

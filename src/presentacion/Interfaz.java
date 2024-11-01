@@ -22,15 +22,15 @@ public class Interfaz implements Serializable {
     }
 
     public static void ayuda() {
-        System.out.println("Tiene las siguientes opciones disponibles: \n addProcesador: para añadir un procesador al catálogo. \n addMarca: para añadir una marca en el catálogo. \n guardar: para guardar los datos en un archivo de guardado. \n leer: inspeccionar archivo de guardado. \n elimProcesador: elimina un procesador. \n elimMarca: elimina una marca. \n lista: para mostrar por pantalla las marcas, procesadores y precios disponibles antes de guardar. \n exit: para salir y guardar los datos en un archivo de creación automática. \n");
+        System.out.println("Tiene las siguientes opciones disponibles: \n addProcesador: para anniadir un procesador al catalogo. \n addMarca: para anniadir una marca en el catalogo. \n guardar: para guardar los datos en un archivo de guardado. \n leer: lectura inicial. \n elimProcesador: elimina un procesador. \n elimMarca: elimina una marca. \n lista: para mostrar por pantalla las marcas, procesadores y precios disponibles antes de guardar. \n exit: para salir y guardar los datos en un archivo de creacion automatica. \n");
     }
 
     //Método para añadir marcas. Se escribe un texto a continuación del cual podemos escribir el nombre de la marca. El scanner lee el valor
     public void anniadirMarca() {
-        System.out.print("Escriba el nombre de la marca para añadirla al catálogo: ");
+        System.out.print("Escriba el nombre de la marca para anniadirla al catalogo: ");
         String nombre = sc.nextLine();
         c.addMarca(new Marca(nombre));
-        System.out.println("Se ha añadido la marca: " + nombre);
+        System.out.println("Se ha anniadido la marca: " + nombre);
     }
 
     public void elimMarca() {
@@ -38,7 +38,7 @@ public class Interfaz implements Serializable {
         for (int i = 0; i < c.cantidadMarcas(); i++) {
             System.out.println(i + ".- " + c.getMarca(i).getNombre());
         }
-        System.out.print("Escriba el número de la marca que desea eliminar: ");
+        System.out.print("Escriba el numero de la marca que desea eliminar: ");
         int j = sc.nextInt();
         sc.nextLine();
         Marca m = c.getMarca(j);
@@ -51,19 +51,19 @@ public class Interfaz implements Serializable {
         for (int i = 0; i < c.cantidadMarcas(); i++) {
             System.out.println(i + ".- " + c.getMarca(i).getNombre());
         }
-        System.out.print("Número de marca a la que quieras añadir el procesador: ");
+        System.out.print("Numero de marca a la que quieras anniadir el procesador: ");
         int i = sc.nextInt();
         sc.nextLine();
         Marca m = c.getMarca(i);
-        System.out.print("Escriba el nombre o modelo del procesador que quiera añadir: ");
+        System.out.print("Escriba el nombre o modelo del procesador que quiera anniadir: ");
         String nombre = sc.nextLine();
         System.out.print("Escriba el precio del procesador (en euros): ");
         int precio = sc.nextInt();
-        System.out.print("Escriba la generación de creación del procesador: ");
-        String generacion = sc.nextLine();
         sc.nextLine();
+        System.out.print("Escriba la generacion de creacion del procesador: ");
+        String generacion = sc.nextLine();
         m.addProcesador(new Procesador(nombre, generacion, precio));
-        System.out.println("Se ha añadido el procesador: " + nombre);
+        System.out.println("Se ha anniadido el procesador: " + nombre);
 
     }
 
@@ -71,7 +71,7 @@ public class Interfaz implements Serializable {
         System.out.println("Las marcas disponibles son: \n");
         for (int i = 0; i < c.cantidadMarcas(); i++)
             System.out.println(i + ".- " + c.getMarca(i).getNombre());
-        System.out.print("Número de marca de la que quieras eliminar el procesador: ");
+        System.out.print("Numero de marca de la que quieras eliminar el procesador: ");
         int i = sc.nextInt();
         sc.nextLine();
         Marca m = c.getMarca(i);
@@ -79,7 +79,7 @@ public class Interfaz implements Serializable {
         for (i = 0; i < m.getProcesadores(); i++) {
             System.out.println(i + ".- " + m.getProcesador(i).getNombre());
         }
-        System.out.print("Escriba el número en lista del procesador que quiera eliminar: ");
+        System.out.print("Escriba el numero en lista del procesador que quiera eliminar: ");
         int j = sc.nextInt();
         sc.nextLine();
         Procesador p = m.getProcesador(j);
@@ -90,7 +90,7 @@ public class Interfaz implements Serializable {
     public void leer() {
 
         String nombreM, nombreP;
-        c.setNombre("Catálogo");
+        c.setNombre("Catalogo");
         do {
             System.out.print("Introduce el nombre de la marca (<enter> para finalizar): ");
             nombreM = sc.nextLine();
@@ -102,7 +102,8 @@ public class Interfaz implements Serializable {
                     if (!nombreP.equals("")) {
                         System.out.print("Introduce el precio del procesador (<enter> para finalizar): ");
                         int precio = sc.nextInt();
-                        System.out.print("Introduce el número de generacion del procesador (<enter> para finalizar): ");
+                        sc.nextLine();
+                        System.out.print("Introduce el numero de generacion del procesador (<enter> para finalizar): ");
                         String generacion = sc.nextLine();
                         sc.nextLine();
                         Procesador procesador = new Procesador(nombreP, generacion, precio);
@@ -151,12 +152,12 @@ public class Interfaz implements Serializable {
                 return false;
             }
             else {
-                System.out.println("Petición errónea. Las únicas opciones dispoibles son las siguientes: ");
+                System.out.println("Peticion erronea. Las unicas opciones disponibles son las siguientes: ");
                 ayuda();
             }
         }
         else {
-            System.out.println("Petición errónea. Las únicas opciones dispoibles son las siguientes: ");
+            System.out.println("Peticion erronea. Las únicas opciones disponibles son las siguientes: ");
             ayuda();
         }
 
