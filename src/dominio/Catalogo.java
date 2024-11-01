@@ -56,10 +56,9 @@ public class Catalogo implements Serializable{
     //El siguiente método sirve para guardar todos los datos en un archivo. Consideramos que pueden existir excepciones (por ejemplo, que alguien introduzca mal un dato), entonces, mediante try and catch reconducimos la excepción a donde nos interesa; en este caso, da un mensaje de error. Esto también ayuda al programador a saber si funciona el código y dónde falla.
     public void guardar_datos(){
         try {
-            ObjectOutputStream oo = new ObjectOutputStream(new FileOutputStream("catalogo.jar"));
+            ObjectOutputStream oo = new ObjectOutputStream(new FileOutputStream("catalogo.dat"));
             oo.writeObject(this);
             oo.close();
-            System.out.print("comprobación Catalogo");
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("La función de guardado no se ha ejecutado correctamente. Revise el análisis realizado por el programa y vuelva a intetarlo.");
@@ -71,7 +70,7 @@ public class Catalogo implements Serializable{
     public static Catalogo inspeccionar(){
         try {
             //Lo de dentro del archivo (fichero) se abre como fichero y se lee. Se crea un string de lo que hay dentro
-            ObjectInputStream oi = new ObjectInputStream (new FileInputStream("catalogo.jar"));
+            ObjectInputStream oi = new ObjectInputStream (new FileInputStream("catalogo.dat"));
             Catalogo c = (Catalogo) oi.readObject();
             oi.close();
             return c;
@@ -85,7 +84,10 @@ public class Catalogo implements Serializable{
         StringBuilder datos = new StringBuilder();
         datos.append(nombre+" "+ "\n")
                 .append("Precio total productos: ")
-                .append(getPrecio());
+                .append(getPrecio())
+                .append(" euros\n")
+                .append("Marcas disponibles: \n")
+                .append(marcas.toString());
         return datos.toString();
         }
 

@@ -22,140 +22,135 @@ public class Interfaz implements Serializable {
     }
 
     public static void ayuda() {
-        System.out.println("Tiene las siguientes opciones disponibles: \n addProcesador: para añadir un procesador al catálogo. \n addMarca: para añadir una marca en el catálogo. \n leer: inspeccionar archivo de guardado. \n elimProcesador: elimina un procesador. \n elimMarca: elimina una marca. \n modProcesador: para modificar los datos de un procesador. \n exit: para salir y guardar datos en un archivo de creación automática. \n");
+        System.out.println("Tiene las siguientes opciones disponibles: \n addProcesador: para añadir un procesador al catálogo. \n addMarca: para añadir una marca en el catálogo. \n guardar: para guardar los datos en un archivo de guardado. \n leer: inspeccionar archivo de guardado. \n elimProcesador: elimina un procesador. \n elimMarca: elimina una marca. \n lista: para mostrar por pantalla las marcas, procesadores y precios disponibles antes de guardar. \n exit: para salir y guardar los datos en un archivo de creación automática. \n");
     }
 
     //Método para añadir marcas. Se escribe un texto a continuación del cual podemos escribir el nombre de la marca. El scanner lee el valor
-    public void añadirMarca() {
-        System.out.println("Escriba el nombre de la marca para añadirla al catálogo: ");
+    public void anniadirMarca() {
+        System.out.print("Escriba el nombre de la marca para añadirla al catálogo: ");
         String nombre = sc.nextLine();
-        System.out.println("La marca es: " + nombre);
-        c.addMarca(new Marca(nombre));//REVISAR ESTE MÉTODO
+        c.addMarca(new Marca(nombre));
+        System.out.println("Se ha añadido la marca: " + nombre);
     }
 
     public void elimMarca() {
-        System.out.println("Las marcas son: ");
+        System.out.print("Las marcas son: \n");
         for (int i = 0; i < c.cantidadMarcas(); i++) {
             System.out.println(i + ".- " + c.getMarca(i).getNombre());
-            System.out.println("Escriba el nombre de la marca que desea eliminar: ");
-            String nombre = sc.nextLine();
-            sc.nextLine();
-            c.elimMarca(new Marca(nombre));
         }
+        System.out.print("Escriba el número de la marca que desea eliminar: ");
+        int j = sc.nextInt();
+        sc.nextLine();
+        Marca m = c.getMarca(j);
+        c.elimMarca(m);
+        System.out.println("Se ha eliminado la marca: " + m.getNombre());
     }
 
-    public void añadirProcesador() {
-        System.out.println("Las marcas disponibles son: ");
+    public void anniadirProcesador() {
+        System.out.println("Las marcas disponibles son: \n");
         for (int i = 0; i < c.cantidadMarcas(); i++) {
             System.out.println(i + ".- " + c.getMarca(i).getNombre());
         }
-        System.out.println("Número de marca a la que quieras añadir el procesador: ");
+        System.out.print("Número de marca a la que quieras añadir el procesador: ");
         int i = sc.nextInt();
         sc.nextLine();
         Marca m = c.getMarca(i);
-        System.out.println("Escribe el nombre o modelo del procesador que quieras añadir: ");
+        System.out.print("Escriba el nombre o modelo del procesador que quiera añadir: ");
         String nombre = sc.nextLine();
+        System.out.print("Escriba el precio del procesador (en euros): ");
         int precio = sc.nextInt();
+        System.out.print("Escriba la generación de creación del procesador: ");
+        String generacion = sc.nextLine();
         sc.nextLine();
-        m.addProcesador(new Procesador(nombre, precio));
+        m.addProcesador(new Procesador(nombre, generacion, precio));
+        System.out.println("Se ha añadido el procesador: " + nombre);
 
     }
 
     public void elimProcesador() {
-        System.out.println("Las marcas disponibles son: ");
-        for (int i = 0; i < c.cantidadMarcas(); i++) {
+        System.out.println("Las marcas disponibles son: \n");
+        for (int i = 0; i < c.cantidadMarcas(); i++)
             System.out.println(i + ".- " + c.getMarca(i).getNombre());
-        }
-        System.out.println("Número de marca de la que quieras eliminar el procesador: ");
+        System.out.print("Número de marca de la que quieras eliminar el procesador: ");
         int i = sc.nextInt();
         sc.nextLine();
         Marca m = c.getMarca(i);
         System.out.println("Los procesadores disponibles para esta marca son: ");
         for (i = 0; i < m.getProcesadores(); i++) {
             System.out.println(i + ".- " + m.getProcesador(i).getNombre());
-            System.out.println("Escribe el nombre o modelo del procesador que quieras eliminar y, separado por una coma, su precio: ");
-            String nombre = sc.nextLine();
-            int precio = sc.nextInt();
-            sc.nextLine();
-            m.elimProcesador(new Procesador(nombre, precio));
         }
+        System.out.print("Escriba el número en lista del procesador que quiera eliminar: ");
+        int j = sc.nextInt();
+        sc.nextLine();
+        Procesador p = m.getProcesador(j);
+        m.elimProcesador(p);
+        System.out.println("Se ha eliminado el procesador: " + p.getNombre());
     }
 
-    public void modProcesador() {
-        System.out.println("Las marcas disponibles son: ");
-        for (int i = 0; i < c.cantidadMarcas(); i++) {
-            System.out.println(i + ".- " + c.getMarca(i).getNombre());
-        }
-        System.out.println("Número de marca de la que quieras modificar el procesador: ");
-        int i = sc.nextInt();
-        sc.nextLine();
-        Marca m = c.getMarca(i);
-        System.out.println("Los procesadores disponibles para esta marca son: ");
-        for (i = 0; i < m.getProcesadores(); i++) {
-            System.out.println(i + ".- " + m.getProcesador(i).getNombre());
-            System.out.println("Escribe el nombre o modelo del procesador que quieras modificar y, separado por una coma, su precio: ");
-            String nombre = sc.nextLine();
-            int precio = sc.nextInt();
-            sc.nextLine();
-            m.modProcesador(new Procesador(nombre, precio));
-        }
-    }
-    public void leer(){
+    public void leer() {
+
         String nombreM, nombreP;
         c.setNombre("Catálogo");
-        do{
-            System.out.println("Escriba el nombre de la marca: ");
+        do {
+            System.out.print("Introduce el nombre de la marca (<enter> para finalizar): ");
             nombreM = sc.nextLine();
-            if (!nombreM.equals("")){
+            if (!nombreM.equals("")) {
                 Marca marca = new Marca(nombreM);
                 do {
-                    System.out.println("Escribe el nombre o modelo del procesador: ");
+                    System.out.print("Introduce el nombre del procesador (<enter> para finalizar): ");
                     nombreP = sc.nextLine();
-                    if (!nombreP.equals("")){
-                        System.out.println("Escribe el precio del procesador: ");
+                    if (!nombreP.equals("")) {
+                        System.out.print("Introduce el precio del procesador (<enter> para finalizar): ");
                         int precio = sc.nextInt();
+                        System.out.print("Introduce el número de generacion del procesador (<enter> para finalizar): ");
+                        String generacion = sc.nextLine();
                         sc.nextLine();
-                        Procesador procesador = new Procesador(nombreP, precio);
+                        Procesador procesador = new Procesador(nombreP, generacion, precio);
                         marca.addProcesador(procesador);
                     }
-                }while (!nombreP.equals(""));
+
+                }
+                while (!nombreP.equals(""));
                 c.addMarca(marca);
+
             }
-
-        }while (!nombreM.equals(""));
-
+        } while (!nombreM.equals(""));
     }
 
-    public String [] leerOrden(){
+
+    public String[] leerOrden() {
         System.out.print("?>");
         String cadena = sc.nextLine();
-        return cadena.split("");
+        return cadena.split(" ");
     }
 
 //Ahora necesitamos un boolean que asegure la ejecución del programa
 
-    public boolean procesarOrden (String [] c){
-        if (c.length == 1) {
-            if (c[0].equals("addMarca"))
-                añadirMarca();
-            else if (c[0].equals("elimMarca"))
+    public boolean procesarOrden(String[] orden) {
+        if (orden.length==1){
+            if (orden[0].equals("addMarca"))
+                anniadirMarca();
+            else if (orden[0].equals("elimMarca"))
                 elimMarca();
-            else if (c[0].equals("addProcesador"))
-                añadirProcesador();
-            else if (c[0].equals("elimProcesador"))
+            else if (orden[0].equals("addProcesador"))
+                anniadirProcesador();
+            else if (orden[0].equals("elimProcesador"))
                 elimProcesador();
-            else if (c[0].equals("modProcesador"))
-                modProcesador();
-            else if (c[0].equals("lista"))
+            else if (orden[0].equals("lista")){
+                c.setNombre("Catálogo\n");
                 System.out.println(this.c);
-            else if (c[0].equals("leer"))
+            }
+            else if (orden[0].equals("leer"))
                 leer();
-            else if (c[0].equals("ayuda"))
+            else if (orden[0].equals("ayuda"))
                 ayuda();
-            else if (c[0].equals("salir")) {
+            else if (orden[0].equals("guardar"))
+                c.guardar_datos();
+            else if (orden[0].equals("salir")) {
                 guardar_datos();
                 return false;
-            } else {
+            }
+            else {
                 System.out.println("Petición errónea. Las únicas opciones dispoibles son las siguientes: ");
                 ayuda();
             }
@@ -164,8 +159,9 @@ public class Interfaz implements Serializable {
             System.out.println("Petición errónea. Las únicas opciones dispoibles son las siguientes: ");
             ayuda();
         }
+
         return true;
 
-    }
 
+    }
 }

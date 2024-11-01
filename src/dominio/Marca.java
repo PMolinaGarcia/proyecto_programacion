@@ -30,13 +30,7 @@ public class Marca implements Serializable{
     public Procesador getProcesador(int i){
         return procesadores.get(i);
     }
-    //Método para modificar los datos de los procesadores ¡EN PROCESO! ¡HAY QUE REVISAR!
 
-    public Marca modProcesador(Procesador procesador){
-        procesadores.remove(procesador);
-        procesadores.add(procesador);
-        return this;
-    }
     //Añadimos el método setter
     public Marca setNombre(String nombre){
         this.nombre = nombre;
@@ -65,8 +59,12 @@ public class Marca implements Serializable{
     //Añadimos un StringBuilder que tenga todos los datos
     public String toString(){
         StringBuilder datos = new StringBuilder();
-        datos.append("Nombre de la marca: " + nombre + "\n")
-                .append("Precio total de todos los procesadores de la marca: " + getPrecio() + "\n");
+        datos.append("-"+nombre + ". ")
+                .append("Precio total de todos los procesadores de la marca: " + getPrecio() + " euros\n")
+                .append("\n")
+                .append("Procesadores disponibles en esta marca: \n")
+                .append(procesadores.toString())
+                .append("\n\n");
         return datos.toString();
     }
 }
