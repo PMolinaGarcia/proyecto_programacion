@@ -3,28 +3,48 @@ import dominio.*;
 import java.util.*;
 import java.io.*;
 
-
+/**
+ * Esta clase representa el interfaz que interactua con el usuario. Implementa Serializable para utilizar los toString del resto de clases
+ */
 public class Interfaz implements Serializable {
 
+    /**
+     * Creacion de un parametro c de tipo catalogo
+     */
     private Catalogo c = new Catalogo();
 
+    /**
+     * Abreviacion del metodo para escanear mediante un atributo
+     */
     //Abreviación del método para escanear
     private Scanner sc = new Scanner(System.in);
 
+    /**
+     * Creacion de un metodo c que abrevie en c la funcion de inspeccionar
+     */
     //Para leer todo lo del archivo y que se asigne a un objeto c de Catalogo
     public Interfaz() {
         c = Catalogo.inspeccionar();
     }
 
+    /**
+     * Funcion que ejecuta el guardado de los datos
+     */
     //Para ejecutar el guardado de datos
     public void guardar_datos() {
         c.guardar_datos();
     }
 
+    /**
+     * Metodo de ayuda que imprime todas las opciones disponibles en el programa
+     */
     public static void ayuda() {
         System.out.println("Tiene las siguientes opciones disponibles: \n addProcesador: para anniadir un procesador al catalogo. \n addMarca: para anniadir una marca en el catalogo. \n guardar: para guardar los datos en un archivo de guardado. \n leer: lectura inicial. \n elimProcesador: elimina un procesador. \n elimMarca: elimina una marca. \n lista: para mostrar por pantalla las marcas, procesadores y precios disponibles antes de guardar. \n exit: para salir y guardar los datos en un archivo de creacion automatica. \n");
     }
 
+    /**
+     * Metodo para anniadir marcas
+     */
     //Método para añadir marcas. Se escribe un texto a continuación del cual podemos escribir el nombre de la marca. El scanner lee el valor
     public void anniadirMarca() {
         System.out.print("Escriba el nombre de la marca para anniadirla al catalogo: ");
@@ -33,6 +53,9 @@ public class Interfaz implements Serializable {
         System.out.println("Se ha anniadido la marca: " + nombre);
     }
 
+    /**
+     * Metodo para eliminar marcas
+     */
     public void elimMarca() {
         System.out.print("Las marcas son: \n");
         for (int i = 0; i < c.cantidadMarcas(); i++) {
@@ -46,6 +69,9 @@ public class Interfaz implements Serializable {
         System.out.println("Se ha eliminado la marca: " + m.getNombre());
     }
 
+    /**
+     * Metodo para anniadir procesadores
+     */
     public void anniadirProcesador() {
         System.out.println("Las marcas disponibles son: \n");
         for (int i = 0; i < c.cantidadMarcas(); i++) {
@@ -67,6 +93,9 @@ public class Interfaz implements Serializable {
 
     }
 
+    /**
+     * Metodo para eliminar procesadores
+     */
     public void elimProcesador() {
         System.out.println("Las marcas disponibles son: \n");
         for (int i = 0; i < c.cantidadMarcas(); i++)
@@ -87,6 +116,9 @@ public class Interfaz implements Serializable {
         System.out.println("Se ha eliminado el procesador: " + p.getNombre());
     }
 
+    /**
+     * Metodo para leer todos los datos del catalogo
+     */
     public void leer() {
 
         String nombreM, nombreP;
@@ -119,12 +151,23 @@ public class Interfaz implements Serializable {
     }
 
 
+    /**
+     * Metodo para que el programa lea la orden que le pasa el usuario
+     *
+     * @return la orden introducida por el usuario
+     */
     public String[] leerOrden() {
         System.out.print("?>");
         String cadena = sc.nextLine();
         return cadena.split(" ");
     }
 
+    /**
+     * Metodo booleano que indica al programa como responder segun la instruccion introducida por el usuario
+     *
+     * @param orden orden introducida por el usuario mediante la terminal
+     * @return el valor de verdad. Si es falso, deja de ejecutarse el programa. Si es verdadero, se mantiene funcionando
+     */
 //Ahora necesitamos un boolean que asegure la ejecución del programa
 
     public boolean procesarOrden(String[] orden) {
