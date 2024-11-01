@@ -66,7 +66,7 @@ El proyecto se encuentra dividido en los siguientes directorios:
 
 En este diagrama se puede observar la representación gráfica de las conexiones entre las clases de los directorios pertenecientes al programa.
 
-proyecto_programacion/Diagrama_UML.xmi
+(https://github.com/PMolinaGarcia/proyecto_programacion/blob/main/Diagrama_UML.xmi)
 
 ## Licencia
 
