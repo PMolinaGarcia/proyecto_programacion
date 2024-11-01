@@ -8,7 +8,7 @@ Proyecto final de la asignatura de Programación I realizado por Pablo Molina Ga
 - [Uso](#uso)
 - [Instalación](#instalación)
 - [Ejecución](#ejecución)
-- [Importante a tener en cuenta](#importanteatenerencuenta)
+- [Importante a tener en cuenta](#importante-a-tener-en-cuenta)
 - [Licencia](#licencia)
 
 ## Finalidad
