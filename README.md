@@ -10,6 +10,7 @@ Proyecto final de la asignatura de Programación I realizado por Pablo Molina Ga
 - [Ejecución](#ejecución)
 - [Importante a tener en cuenta](#importante-a-tener-en-cuenta)
 - [Estructura del proyecto](#estructura-del-proyecto)
+- [Diagrama UML](#diagrama-uml)
 - [Licencia](#licencia)
 
 ### Descripción
