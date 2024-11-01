@@ -8,12 +8,12 @@ Proyecto final de la asignatura de Programación I realizado por Pablo Molina Ga
 - [Uso](#uso)
 - [Instalación](#instalación)
 - [Ejecución](#ejecución)
-- [Importante a tener en cuenta](#importante a tener en cuenta)
+- [Importante a tener en cuenta](#importanteatenerencuenta)
 - [Licencia](#licencia)
 
 ## Finalidad
 
-Este proyecto consiste en un programa cuya función es la de un catálogo de productos. Concretamente, este catálogo se centra en procesadores de ordenadores, de tal forma que podamos añadirlos, eliminarlos y verlos en el catálogo mediante un listado. Además, tendremos información acerca de la generación de cada procesador y el precio del mismo; en adición, según se añadan procesadores a cada marca, podremos ver el precio total de todos los procesadores que encontremos en esta, y de igual manera podremos saber el precio total de todos los artículos del catálogo.
+Este proyecto consiste en un programa cuya función es la de un catálogo de productos. Concretamente, este catálogo se centra en procesadores de ordenadores, de tal forma que podamos añadirlos, eliminarlos y verlos en el catálogo mediante un listado. Además, tendremos información acerca de la generación de cada procesador y el precio del mismo; también, según se añadan procesadores a cada marca, podremos ver el precio total de todos los procesadores que encontremos en esta, y de igual manera podremos saber el precio total de todos los artículos del catálogo.
 
 Este es un catálogo que está diseñado de cara a una tienda de procesadores, ya que es a la tienda a la que le interesa conocer el precio de todos los artículos que tiene a la venta, mientras que al usuario podrían interesarle, como mucho, los precios individuales; además, es la empresa la que debe poder editar los productos disponibles y no el usuario.
 
@@ -55,5 +55,5 @@ A la hora de escribir tanto el nombre/modelo del procesador como su generación 
 
 ## Licencia
 
-Este software ha sido publicado bajo la licencia Apache-2.0 license
+Este software ha sido publicado bajo la licencia Apache-2.0 license.
 
