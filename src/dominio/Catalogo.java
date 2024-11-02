@@ -155,7 +155,9 @@ public class Catalogo implements Serializable{
     //El método to String
     public String toString(){
         StringBuilder datos = new StringBuilder();
-        datos.append(nombre+" "+ "\n")
+        datos.append(nombre)
+                .append(" ")
+                .append("\n")
                 .append("Precio total productos: ")
                 .append(getPrecio())
                 .append(" euros\n")

@@ -117,8 +117,12 @@ public class Marca implements Serializable{
     //Añadimos un StringBuilder que tenga todos los datos
     public String toString(){
         StringBuilder datos = new StringBuilder();
-        datos.append("-"+nombre + ". ")
-                .append("Precio total de todos los procesadores de la marca: " + getPrecio() + " euros\n")
+        datos.append("-")
+                .append(nombre)
+                .append(". ")
+                .append("Precio total de todos los procesadores de la marca: ")
+                .append(getPrecio())
+                .append(" euros\n")
                 .append("\n")
                 .append("Procesadores disponibles de esta marca: \n")
                 .append(procesadores.toString())

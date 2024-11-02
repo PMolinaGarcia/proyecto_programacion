@@ -110,10 +110,16 @@ public class Procesador implements Serializable{
     //Añadimos un StringBuilder que tenga todos los datos
     public String toString(){
         StringBuilder datos = new StringBuilder();
-        datos.append("Nombre: " + nombre + ". ")
-                .append("Precio: " + precio + " euros. ")
-                .append("Generacion: " + generacion +". \n");
-        return datos.toString();
+        datos.append("Nombre: ")
+                .append(nombre)
+                .append(". ")
+                .append("Precio: ")
+                .append(precio)
+                .append(" euros. ")
+                .append("Generacion: ")
+                .append(generacion)
+                .append(". \n");
+         return datos.toString();
     }
 
 }
