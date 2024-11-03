@@ -3,7 +3,8 @@ import java.util.ArrayList;
 import java.io.*;
 
 /**
- * Esta clase representa las marcas en las que clasificamos a los procesadores. Implementa Serializable para el toString final.
+ * Esta clase representa las marcas en las que clasificamos a los procesadores.
+ * Implementa Serializable para el toString final y de cara al guardadp.
  */
 //Definimos la clase
 public class Marca implements Serializable{
@@ -11,6 +12,13 @@ public class Marca implements Serializable{
      * Definición del atributo nombre.
      */
     private String nombre;
+
+
+    /**
+     * El ArrayList al añadir todos los procesadores a la marca y clasificarlos.
+     */
+    //Creamos un ArrayList para añadir todos los procesadores a la marca y clasificarlos
+    private ArrayList<Procesador> procesadores = new ArrayList();
 
     /**
      * El constructor que asigna el valor inicial al nombre.
@@ -23,11 +31,6 @@ public class Marca implements Serializable{
     }
 
 
-    /**
-     * El ArrayList al añadir todos los procesadores a la marca y clasificarlos.
-     */
-    //Creamos un ArrayList para añadir todos los procesadores a la marca y clasificarlos
-    private ArrayList<Procesador> procesadores = new ArrayList();
 
     /**
      * El método para añadir procesadores de cada marca.

@@ -4,7 +4,7 @@ import java.io.*;
 
 /**
  * Esta clase representa aquello que queremos almacenar en el catálogo: procesadores de ordenador.
- * Implementa Serializable para el toString final.
+ * Implementa Serializable para el toString final y de cara a la función de guardado.
  */
 //Creamos la clase tras importar las librerías necesarias
 public class Procesador implements Serializable{
