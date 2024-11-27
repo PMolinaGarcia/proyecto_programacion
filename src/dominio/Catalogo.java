@@ -1,6 +1,7 @@
 package dominio;
 import java.io.*;
 import java.util.ArrayList;
+import excepciones.*;
 
 /**
  * Esta clase representa el catálogo total de los productos ofrecidos. Implementa Serializable para el toString final.
@@ -25,7 +26,10 @@ public class Catalogo implements Serializable{
      * @return La marca añadida.
      */
     //El método para añadir marcas al catálogo
-    public Catalogo addMarca(Marca marca){
+    public Catalogo addMarca(Marca marca) throws MarcaDuplicada {
+        if (marcas.contains(marca))
+            throw new MarcaDuplicada(marca);
+
         marcas.add(marca);
         return this;
     }
@@ -34,11 +38,16 @@ public class Catalogo implements Serializable{
      * Método para eliminar marcas del catálogo.
      *
      * @param marca La marca que se va a eliminar.
-     * @return La marca eliminada.
+     * @return El objeto catalogo con la marca eliminada.
      */
     //El método para eliminar marcas del catálogo
-    public Catalogo elimMarca(Marca marca){
-        marcas.remove(marca);
+    public Catalogo elimMarca(Marca marca) throws MarcaNoEncontrada{
+        if (marcas.contains(marca)){
+            marcas.remove(marca);
+        }else {
+            System.out.print("ALGO FALLA EN CATALOGO");
+            throw new MarcaNoEncontrada(marca);
+        }
         return this;
     }
 

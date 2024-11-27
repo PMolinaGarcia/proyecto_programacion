@@ -2,6 +2,7 @@ package aplicacion;
 import dominio.*;
 import presentacion.Interfaz;
 import java.io.*;
+import excepciones.*;
 
 /**
  * @author Pablo Molina García
@@ -15,7 +16,7 @@ public class Principal {
      * @param args son los argumentos introducidos por el usuario mediante la terminal.
      */
     //En Principal siempre vamos a tener el método main de ejecución
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ComponenteDuplicado, MarcaDuplicada, ComponenteNoEncontrado, MarcaNoEncontrada{
         Interfaz interfaz = new Interfaz();
         String [] orden;
         System.out.print("\n\n\n ¡Bienvenido al catalogo de procesadores de Pablo Molina Garcia! \n\n\n");

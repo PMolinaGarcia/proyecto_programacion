@@ -7,101 +7,42 @@ import java.io.*;
  * Implementa Serializable para el toString final y de cara a la función de guardado.
  */
 //Creamos la clase tras importar las librerías necesarias
-public class Procesador implements Serializable{
+public class Procesador extends Componente implements Serializable{
 
-
-    //Definimos los atributos necesarios. Nombre del procesador, precio y generación
     /**
-     * Definición del atributo nombre.
-     */
-    private String nombre;
-    /**
-     * Definición del atributo generación.
-     */
-    private String generacion;
-    /**
-     * Definición del atributo precio.
-     */
-    private int precio;
+     * Definición del atributo núcleos
+      */
+    private int nucleos;
 
 
     /**
      * El constructor que asigna los valores iniciales a los atributos.
      *
      * @param nombre El nombre del procesador.
-     * @param generacion La generación de fabricación o salida al mercado del procesador.
-     * @param precio El precio del procesador (en euros).
+     * @param precio El precio del procesador.
+     * @param generacion La generación del procesador.
+     * @param nucleos Los núcleos del procesador.
      */
     //Constructor para dar valores iniciales que modificar
-    public Procesador(String nombre, String generacion, int precio){
-        this.nombre = nombre;
-        this.generacion = generacion;
-        this.precio = precio;
+    public Procesador(String nombre, String generacion, int precio, int nucleos){
+        super(nombre, generacion, precio);
+        this.nucleos= nucleos;
     }
 
-    /**
-     * Método setter para el nombre.
-     *
-     * @param nombre El nuevo nombre del procesador.
-     * @return El nombre del procesador.
-     */
-    //Métodos setter
-    public Procesador setNombre(String nombre){
-        this.nombre = nombre;
+    public Procesador(){}
+
+    public Procesador(String nombre){
+        this.nombre=nombre;
+    }
+
+    public Procesador setNucleos(int nucleos){
+        this.nucleos = nucleos;
         return this;
     }
 
-    /**
-     * Método setter para el precio.
-     *
-     * @param precio El nuevo precio del procesador.
-     * @return El precio del procesador (en euros).
-     */
-    public Procesador setPrecio(int precio){
-        this.precio = precio;
-        return this;
+    public int getNucleos(){
+        return nucleos;
     }
-
-    /**
-     * Método setter para la generación.
-     *
-     * @param generacion La nueva generación del procesador.
-     * @return La generación del procesador.
-     */
-    public Procesador setGeneracion(String generacion){
-        this.generacion = generacion;
-        return this;
-    }
-
-    /**
-     * Método getter para el nombre.
-     *
-     * @return El nombre del procesador.
-     */
-    //Métodos getter
-
-    public String getNombre(){
-        return nombre;
-    }
-
-    /**
-     * Método getter para el precio.
-     *
-     * @return El precio del procesador.
-     */
-    public int getPrecio(){
-        return precio;
-    }
-
-    /**
-     * Método getter para la generación.
-     *
-     * @return La generación del procesador.
-     */
-    public String getGeneracion(){
-        return generacion;
-    }
-
     /**
      * El método toString.
      *
@@ -109,15 +50,9 @@ public class Procesador implements Serializable{
      */
     //Añadimos un StringBuilder que tenga todos los datos
     public String toString(){
-        StringBuilder datos = new StringBuilder();
-        datos.append("Nombre: ")
-                .append(nombre)
-                .append(". ")
-                .append("Precio: ")
-                .append(precio)
-                .append(" euros. ")
-                .append("Generacion: ")
-                .append(generacion)
+        StringBuilder datos = new StringBuilder(super.toString());
+        datos.append("Nucleos: ")
+                .append(nucleos)
                 .append(". \n");
          return datos.toString();
     }

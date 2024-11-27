@@ -17,7 +17,7 @@ limpiar:
 	rm -rf $(OUT_DIR)
 	rm -rf $(DOC_DIR)
 	rm -f $(JAR_FILE)
-javadoc:compilar
+javadoc:
 	find . -type f -name "*.java" | xargs javadoc -d $(DOC_DIR) -encoding utf-8 -docencoding utf-8 -charset utf-8
 debug: compilar
 
