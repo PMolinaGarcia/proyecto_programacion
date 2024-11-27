@@ -165,6 +165,12 @@ public class Interfaz implements Serializable {
 
         }
 
+    /**
+     * Método para eliminar memorias a partir del número de índice de la marca a la que pertenece y su nombre.
+     * Los datos son leídos por el escáner.
+     * Hay que especificar la marca previamente.
+     * Se añade la opción de lanzar la excepción de que el componente no se encuentra.
+     */
     public void elimMemoria() throws ComponenteNoEncontrado{
         System.out.println("Las marcas disponibles son: ");
         for (int i = 0; i<c.cantidadMarcas();i++)

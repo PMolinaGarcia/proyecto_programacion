@@ -1,11 +1,12 @@
 package excepciones;
 import dominio.*;
+import java.io.*;
 
 /**
  * Esta es la clase de la excepción que se da al añadir una marca cuando ya existe dicha marca en el catálogo.
  *
  */
-public class MarcaDuplicada extends Exception {
+public class MarcaDuplicada extends Exception implements Serializable{
     /**
      * Definimos el parámetro marcaDuplicada.
      */

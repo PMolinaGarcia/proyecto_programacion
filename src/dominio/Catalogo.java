@@ -45,7 +45,6 @@ public class Catalogo implements Serializable{
         if (marcas.contains(marca)){
             marcas.remove(marca);
         }else {
-            System.out.print("ALGO FALLA EN CATALOGO");
             throw new MarcaNoEncontrada(marca);
         }
         return this;

@@ -1,10 +1,11 @@
 package dominio;
 import java.util.Objects;
+import java.io.*;
 
 /**
  * Esta es la clase Marca, de la que derivan los diferentes tipos de marcas en función del componente.
  */
-public class Marca {
+public class Marca implements Serializable {
 
     /**
      * Definición del atributo nombre.
@@ -49,14 +50,27 @@ public class Marca {
                 .append(nombre);;
         return datos.toString();
     }
+
+    /**
+     * Se sobreescribe el método equals para comparar únicamente mediante los nombres de los objetos, de tal forma que dos marcas se comparen por su nombre, no por ser MarcaProcesador de clase o MarcaMemoria
+     * @param obj El objeto cualquiera.
+     * @return Objeto igual a otro objeto.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Marca marca = (Marca) obj;
-        return Objects.equals(nombre, marca.nombre);
+        if (obj == null) return false;
+        if (obj instanceof Marca) {
+            Marca other = (Marca) obj;
+            return Objects.equals(nombre, other.nombre);
+        }
+        return false;
     }
 
+    /**
+     * Se sobreescribe el método hashCode que venía por defecto.
+     * @return Un nuevo entero que será utilizado para organizar los objetos.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(nombre);

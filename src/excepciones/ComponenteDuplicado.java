@@ -1,11 +1,12 @@
 package excepciones;
 import dominio.*;
+import java.io.*;
 
 /**
  * Esta es la clase de la excepción que se da al añadir un componente cuando ya existe dicho componente en el catálogo.
  *
  */
-public class ComponenteDuplicado extends Exception{
+public class ComponenteDuplicado extends Exception implements Serializable{
     /**
      * Definimos el parámetro componenteDuplicado.
      */

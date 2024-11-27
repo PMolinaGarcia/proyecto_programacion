@@ -1,11 +1,12 @@
 package excepciones;
 import dominio.*;
+import java.io.*;
 
 /**
  * Esta es la clase de la excepción que se busca un componente cuando no existe dicho componente en el catálogo.
  *
  */
-public class ComponenteNoEncontrado extends Exception{
+public class ComponenteNoEncontrado extends Exception implements Serializable{
     /**
      * Definimos el parámetro componenteNoEncontrado.
      */

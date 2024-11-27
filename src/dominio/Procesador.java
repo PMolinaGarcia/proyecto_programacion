@@ -17,6 +17,7 @@ public class Procesador extends Componente implements Serializable{
 
     /**
      * El constructor que asigna los valores iniciales a los atributos.
+     * Importa parámetros de la superclase, Componente.
      *
      * @param nombre El nombre del procesador.
      * @param precio El precio del procesador.
@@ -29,22 +30,39 @@ public class Procesador extends Componente implements Serializable{
         this.nucleos= nucleos;
     }
 
+    /**
+     * Constructor vacío para posibles llamadas sin parámetros.
+     */
     public Procesador(){}
 
+    /**
+     * Constructor con el atributo nombre para llamadas que sean solo por el nombre; por ejemplo, para borrar.
+     * @param nombre El nombre del procesador.
+     */
     public Procesador(String nombre){
         this.nombre=nombre;
     }
 
+    /**
+     * Método setter del número de núcleos.
+     * @param nucleos Número de núcleos del procesador.
+     * @return El procesador con el número de núcleos actualizado.
+     */
     public Procesador setNucleos(int nucleos){
         this.nucleos = nucleos;
         return this;
     }
 
+    /**
+     * Método getter del número de núcleos del procesador.
+     * @return Número de núcleos del procesador.
+     */
     public int getNucleos(){
         return nucleos;
     }
     /**
      * El método toString.
+     *Hereda los datos de la superclase para añadir los propios.
      *
      * @return Los datos del procesador.
      */
