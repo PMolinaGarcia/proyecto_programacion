@@ -277,8 +277,14 @@ public class Interfaz implements Serializable {
 
             return true;
 
-        }catch(Exception e){
-            System.out.println("Ha sucedido un problema; revise que su sintaxis es correcta, que no ha annadido algun componente ya existente y que no ha intentado borrar un elemento no existente. ");
+        }catch(ComponenteDuplicado e){
+            System.out.println("Este componente ya existe. ");
+        }catch(MarcaDuplicada e){
+            System.out.println("Esta marca ya existe. ");
+        } catch(ComponenteNoEncontrado e) {
+            System.out.println("Este componente no existe. ");
+        } catch(MarcaNoEncontrada e){
+            System.out.println("Esta marca no existe. ");
         }
 
         return true;

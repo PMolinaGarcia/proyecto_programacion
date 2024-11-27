@@ -2,6 +2,7 @@ package dominio;
 import java.util.ArrayList;
 import java.io.*;
 import excepciones.*;
+import java.util.Objects;
 
 /**
  * Esta clase representa las marcas en las que clasificamos a los procesadores.
@@ -92,6 +93,21 @@ public class MarcaProcesador extends Marca implements Serializable{
     //Queremos saber la cantidad de procesadores total en el ArrayList, por lo que pedimos al programa que nos diga el tamaño de este
     public int getProcesadores(){
         return procesadores.size();
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        if (!super.equals(obj)) return false;
+        MarcaProcesador that = (MarcaProcesador) obj;
+        return Objects.equals(nombre, that.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), nombre);
     }
 
     /**
