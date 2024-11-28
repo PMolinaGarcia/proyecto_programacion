@@ -23,13 +23,17 @@ Este es un catálogo que está diseñado de cara a una tienda de procesadores, y
 
 Las instrucciones principales que puede ejecutar este programa son las siguientes:
 
-- Añadir marcas de procesadores
+- Añadir marcas
 
-- Eliminar marcas de procesadores
+- Eliminar marcas
 
-- Añadir procesadores 
+- Modificar marcas
 
-- Eliminar procesadores
+- Añadir procesadores y memorias
+
+- Eliminar procesadores y memorias
+
+- Modificar procesadores y memorias
 
 - Listar todo lo que contiene el catálogo
 
@@ -62,6 +66,7 @@ El proyecto se encuentra dividido en los siguientes directorios:
 - `dominio`: contiene las clases con los datos principales y la mayor parte de los métodos.
 - `aplicacion`: contiene la clase principal, que es la que ejecuta las funciones del resto de clases e inicia la aplicación.
 - `presentacion`: contiene la interfaz del programa, que es la que permite a este interactuar con el usuario y que este pueda llamar a las funciones.
+- `excepciones`: contiene las excepciones del programa.9 
 
 ### Diagrama UML
 
