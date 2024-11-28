@@ -52,7 +52,7 @@ public class Marca implements Serializable {
     }
 
     /**
-     * Se sobreescribe el método equals para comparar únicamente mediante los nombres de los objetos, de tal forma que dos marcas se comparen por su nombre, no por ser MarcaProcesador de clase o MarcaMemoria
+     * Se sobreescribe el método equals para comparar únicamente mediante los nombres de los objetos, de tal forma que dos marcas se comparen por su nombre, no por ser MarcaProcesador de clase o MarcaMemoria.
      * @param obj El objeto cualquiera.
      * @return Objeto igual a otro objeto.
      */
