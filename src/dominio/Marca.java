@@ -12,9 +12,18 @@ public class Marca implements Serializable {
      */
     protected String nombre;
 
+    /**
+     * Constructor para dar un valor inicial al atributo nombre.
+     * @param nombre El nombre de la marca.
+     */
     public Marca(String nombre){
         this.nombre=nombre;
     }
+
+    /**
+     * Constructor vacío para posibles llamadas sin atributos.
+     */
+    public Marca (){}
 
     /**
      * El método setter del nombre de la marca.
@@ -36,6 +45,11 @@ public class Marca implements Serializable {
         return nombre;
     }
 
+    /**
+     * El método getter del nombre de la marca.
+     *
+     * @return Un valor inicial que será cambiado según el método.
+     */
     public int getPrecio() {
         return 0;
     }
@@ -54,7 +68,7 @@ public class Marca implements Serializable {
     /**
      * Se sobreescribe el método equals para comparar únicamente mediante los nombres de los objetos, de tal forma que dos marcas se comparen por su nombre, no por ser MarcaProcesador de clase o MarcaMemoria.
      * @param obj El objeto cualquiera.
-     * @return Objeto igual a otro objeto.
+     * @return Objeto igual a otro objeto según el nombre.
      */
     @Override
     public boolean equals(Object obj) {

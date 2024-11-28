@@ -2,7 +2,7 @@ package dominio;
 import java.io.*;
 
 /**
- * Esta clase representa aquello que queremos almacenar en el catálogo: memorias de ordenador.
+ * Esta clase representa uno de los elementos que queremos almacenar en el catálogo: memorias de ordenador.
  * Implementa Serializable para el toString final y de cara a la función de guardado.
  */
 public class Memoria extends Componente implements Serializable{

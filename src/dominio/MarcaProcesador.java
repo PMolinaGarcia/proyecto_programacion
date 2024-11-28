@@ -8,24 +8,24 @@ import java.util.Objects;
  * Esta clase representa las marcas en las que clasificamos a los procesadores.
  * Implementa Serializable para el toString final y de cara al guardadp.
  */
-//Definimos la clase
 public class MarcaProcesador extends Marca implements Serializable{
-
     /**
      * El ArrayList al añadir todos los procesadores a la marca y clasificarlos.
      */
-    //Creamos un ArrayList para añadir todos los procesadores a la marca y clasificarlos
-    private ArrayList<Procesador> procesadores = new ArrayList();
-
+    private ArrayList<Procesador> procesadores = new ArrayList<>();
     /**
-     * El constructor que asigna el valor inicial al nombre.
+     * El constructor que asigna el valor inicial al nombre. Coge dicho atributo de la superclase Marca.
      *
      * @param nombre El nombre de la marca.
      */
-    //Constructor para asignar valores iniciales
     public MarcaProcesador(String nombre){
         super(nombre);
     }
+
+    /**
+     * Constructor vacío para llamadas sin parámetros.
+     */
+    public MarcaProcesador(){}
 
     /**
      * El método para añadir procesadores de cada marca.
@@ -33,7 +33,6 @@ public class MarcaProcesador extends Marca implements Serializable{
      * @param procesador El procesador que se va a añadir.
      * @return El nuevo procesador añadido.
      */
-    //Método para añadir procesadores de cada marca
     public MarcaProcesador addProcesador(Procesador procesador) throws ComponenteDuplicado {
        if (procesadores.contains(procesador)) {
            throw new ComponenteDuplicado(procesador);
@@ -50,7 +49,6 @@ public class MarcaProcesador extends Marca implements Serializable{
      * @param procesador El procesador que se va a eliminar.
      * @return El procesador eliminado.
      */
-    //Método para eliminar procesadores de cada marca
     public MarcaProcesador elimProcesador(Procesador procesador) throws ComponenteNoEncontrado{
         if (procesadores.contains(procesador)){
             procesadores.remove(procesador);
@@ -65,7 +63,6 @@ public class MarcaProcesador extends Marca implements Serializable{
      * @param i El índice que indica la posición en el ArrayList.
      * @return El procesador en la posición i del ArrayList.
      */
-    //Si quiero que me diga el procesador que se encuentra en la posición i del ArrayList (de la lista)
     public Procesador getProcesador(int i){
         return procesadores.get(i);
     }
@@ -76,7 +73,6 @@ public class MarcaProcesador extends Marca implements Serializable{
      *
      * @return El precio total de todos los procesadores de la marca (en euros).
      */
-    //Para calcular el precio total de los procesadores de la marca
     public int getPrecio(){
         int precio = 0;
         for (Procesador procesador : procesadores){
@@ -90,7 +86,6 @@ public class MarcaProcesador extends Marca implements Serializable{
      *
      * @return Tamaño del ArrayList de procesadores; es decir, la cantidad que hay.
      */
-    //Queremos saber la cantidad de procesadores total en el ArrayList, por lo que pedimos al programa que nos diga el tamaño de este
     public int getProcesadores(){
         return procesadores.size();
     }
@@ -126,7 +121,6 @@ public class MarcaProcesador extends Marca implements Serializable{
      *
      * @return Los datos de la marca.
      */
-    //Añadimos un StringBuilder que tenga todos los datos
     public String toString(){
         StringBuilder datos = new StringBuilder(super.toString());
         datos.append(". ")

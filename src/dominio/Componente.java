@@ -11,18 +11,18 @@ public class Componente implements Serializable {
      * Definición de los atributos nombre, precio y generación, que serán comunes a todas las subclases de Componente.
      */
     protected String nombre;
-    protected int precio;
+    protected double precio;
     protected String generacion;
 
 
     /**
      * El constructor que asigna los valores iniciales a los atributos.
      *
-     * @param nombre El nombre del procesador.
-     * @param precio El precio del procesador.
-     * @param generacion La generación del procesador.
+     * @param nombre El nombre del componente.
+     * @param precio El precio del componente.
+     * @param generacion La generación del componente.
      */
-    public Componente(String nombre, String generacion, int precio){
+    public Componente(String nombre, String generacion, double precio){
         this.nombre = nombre;
         this.precio = precio;
         this.generacion = generacion;
@@ -56,9 +56,9 @@ public class Componente implements Serializable {
      * Método setter para el precio.
      *
      * @param precio El nuevo precio del componente.
-     * @return El objeto componente con el nuevo precio (en euros).
+     * @return El objeto componente con el nuevo precio.
      */
-    public Componente setPrecio(int precio){
+    public Componente setPrecio(double precio){
         this.precio = precio;
         return this;
     }
@@ -88,7 +88,7 @@ public class Componente implements Serializable {
      *
      * @return El precio del componente.
      */
-    public int getPrecio(){
+    public double getPrecio(){
         return precio;
     }
 

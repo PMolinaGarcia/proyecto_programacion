@@ -1,20 +1,15 @@
 package dominio;
 import java.io.*;
 
-
 /**
- * Esta clase representa aquello que queremos almacenar en el catálogo: procesadores de ordenador.
+ * Esta clase representa uno de los tipos de componentes que queremos almacenar en el catálogo: procesadores de ordenador.
  * Implementa Serializable para el toString final y de cara a la función de guardado.
  */
-//Creamos la clase tras importar las librerías necesarias
 public class Procesador extends Componente implements Serializable{
-
     /**
      * Definición del atributo núcleos
       */
     private int nucleos;
-
-
     /**
      * El constructor que asigna los valores iniciales a los atributos.
      * Importa parámetros de la superclase, Componente.
@@ -24,17 +19,14 @@ public class Procesador extends Componente implements Serializable{
      * @param generacion La generación del procesador.
      * @param nucleos Los núcleos del procesador.
      */
-    //Constructor para dar valores iniciales que modificar
-    public Procesador(String nombre, String generacion, int precio, int nucleos){
+    public Procesador(String nombre, String generacion, double precio, int nucleos){
         super(nombre, generacion, precio);
         this.nucleos= nucleos;
     }
-
     /**
      * Constructor vacío para posibles llamadas sin parámetros.
      */
     public Procesador(){}
-
     /**
      * Constructor con el atributo nombre para llamadas que sean solo por el nombre; por ejemplo, para borrar.
      * @param nombre El nombre del procesador.
@@ -62,7 +54,7 @@ public class Procesador extends Componente implements Serializable{
     }
     /**
      * El método toString.
-     *Hereda los datos de la superclase para añadir los propios.
+     * Hereda los datos de la superclase para añadir los propios.
      *
      * @return Los datos del procesador.
      */

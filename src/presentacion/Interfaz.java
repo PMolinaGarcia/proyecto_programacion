@@ -18,14 +18,12 @@ public class Interfaz implements Serializable {
     /**
      * Abreviación del método para escanear mediante un atributo.
      */
-    //Abreviación del método para escanear
     private Scanner sc = new Scanner(System.in);
 
     /**
      * Constructor de la clase Interfaz para asignar un valor inicial al atributo c.
      * El valor viene dado por la inspección realizada en la clase Catalogo.
      */
-    //Para leer todo lo del archivo y que se asigne a un objeto c de Catalogo
     public Interfaz() {
         c = Catalogo.inspeccionar();
     }
@@ -33,7 +31,6 @@ public class Interfaz implements Serializable {
     /**
      * Función que ejecuta el guardado de los datos.
      */
-    //Para ejecutar el guardado de datos
     public void guardar_datos() {
         c.guardar_datos();
     }
@@ -85,7 +82,7 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Método para eliminar marcas a partir de su posición.
+     * Método para eliminar marcas a partir de su nombre.
      */
     public void elimMarca() throws MarcaNoEncontrada {
         System.out.print("Las marcas son: \n");
@@ -116,9 +113,6 @@ public class Interfaz implements Serializable {
         m.setNombre(nuevoNombre);
         System.out.println("La marca ha sido modificada. ");
     }
-
-
-
     /**
      * Método para añadir procesadores a partir de los datos introducidos por el usuario.
      * Los datos son leídos por el escáner.
@@ -145,7 +139,6 @@ public class Interfaz implements Serializable {
         sc.nextLine();
         m.addProcesador(new Procesador(nombre, generacion, precio, nucleos));
         System.out.println("Se ha anniadido el procesador: " + nombre);
-
     }
 
     /**
@@ -333,7 +326,6 @@ public class Interfaz implements Serializable {
         String cadena = sc.nextLine();
         return cadena.split(" ");
     }
-
     /**
      * Método booleano que indica al programa como responder según la instrucción introducida por el usuario.
      * Se emplea un try and catch para el manejo de las excepciones, de tal forma que, según la que suceda, se responda de una forma detemrinada.
@@ -342,8 +334,6 @@ public class Interfaz implements Serializable {
      * @param orden Orden introducida por el usuario mediante la terminal.
      * @return El valor de verdad. Si es falso, deja de ejecutarse el programa. Si es verdadero, se mantiene funcionando.
      */
-//Ahora necesitamos un boolean que asegure la ejecución del programa
-
     public boolean procesarOrden(String[] orden) throws ComponenteDuplicado, ComponenteNoEncontrado, MarcaDuplicada, MarcaNoEncontrada {
         try {
             if (orden.length == 1) {
@@ -387,7 +377,6 @@ public class Interfaz implements Serializable {
                 System.out.println("Peticion erronea. Las únicas opciones disponibles son las siguientes: ");
                 ayuda();
             }
-
             return true;
 
         }catch(ComponenteDuplicado e){
@@ -399,9 +388,6 @@ public class Interfaz implements Serializable {
         } catch(MarcaNoEncontrada e){
             System.out.println("Esta marca no existe. ");
         }
-
         return true;
-
-
     }
 }

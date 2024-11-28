@@ -15,7 +15,6 @@ public class Principal {
      *
      * @param args son los argumentos introducidos por el usuario mediante la terminal.
      */
-    //En Principal siempre vamos a tener el método main de ejecución
     public static void main(String[] args) throws ComponenteDuplicado, MarcaDuplicada, ComponenteNoEncontrado, MarcaNoEncontrada{
         Interfaz interfaz = new Interfaz();
         String [] orden;
