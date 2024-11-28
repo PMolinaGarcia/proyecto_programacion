@@ -73,7 +73,7 @@ public class MarcaProcesador extends Marca implements Serializable{
      *
      * @return El precio total de todos los procesadores de la marca (en euros).
      */
-    public int getPrecio(){
+    public double getPrecio(){
         int precio = 0;
         for (Procesador procesador : procesadores){
             precio += procesador.getPrecio();

@@ -50,7 +50,7 @@ public class Marca implements Serializable {
      *
      * @return Un valor inicial que será cambiado según el método.
      */
-    public int getPrecio() {
+    public double getPrecio() {
         return 0;
     }
 

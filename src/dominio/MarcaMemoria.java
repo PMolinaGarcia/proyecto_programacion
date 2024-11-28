@@ -74,7 +74,7 @@ public class MarcaMemoria extends Marca implements Serializable{
      *
      * @return El precio total de todas las memorias de la marca (en euros).
      */
-    public int getPrecio(){
+    public double getPrecio(){
         int precio = 0;
         for (Memoria memoria : memorias){
             precio += memoria.getPrecio();

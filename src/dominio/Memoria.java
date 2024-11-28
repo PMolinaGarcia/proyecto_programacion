@@ -19,7 +19,7 @@ public class Memoria extends Componente implements Serializable{
      * @param generacion La generación de la memoria.
      * @param capacidad La capacidad de la memoria.
      */
-    public Memoria(String nombre, String generacion, int precio, int capacidad){
+    public Memoria(String nombre, String generacion, double precio, int capacidad){
         super(nombre,generacion,precio);
         this.capacidad=capacidad;
     }
