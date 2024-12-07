@@ -38,11 +38,9 @@ public class Procesador extends Componente implements Serializable{
     /**
      * Método setter del número de núcleos.
      * @param nucleos Número de núcleos del procesador.
-     * @return El procesador con el número de núcleos actualizado.
      */
-    public Procesador setNucleos(int nucleos){
+    public void setNucleos(int nucleos){
         this.nucleos = nucleos;
-        return this;
     }
 
     /**

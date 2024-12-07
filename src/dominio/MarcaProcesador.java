@@ -31,15 +31,15 @@ public class MarcaProcesador extends Marca implements Serializable{
      * El método para añadir procesadores de cada marca.
      *
      * @param procesador El procesador que se va a añadir.
-     * @return El nuevo procesador añadido.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     *
      */
-    public MarcaProcesador addProcesador(Procesador procesador) throws ComponenteDuplicado {
+    public void addProcesador(Procesador procesador) throws ComponenteDuplicado {
        if (procesadores.contains(procesador)) {
            throw new ComponenteDuplicado(procesador);
        }
        else {
            procesadores.add(procesador);
-           return this;
        }
     }
 
@@ -47,12 +47,12 @@ public class MarcaProcesador extends Marca implements Serializable{
      * El método para eliminar procesadores de cada marca.
      *
      * @param procesador El procesador que se va a eliminar.
-     * @return El procesador eliminado.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
      */
-    public MarcaProcesador elimProcesador(Procesador procesador) throws ComponenteNoEncontrado{
+    public void elimProcesador(Procesador procesador) throws ComponenteNoEncontrado{
         if (procesadores.contains(procesador)){
             procesadores.remove(procesador);
-            return this;}
+            }
         else {
             throw new ComponenteNoEncontrado(procesador);
         }
@@ -74,7 +74,7 @@ public class MarcaProcesador extends Marca implements Serializable{
      * @return El precio total de todos los procesadores de la marca (en euros).
      */
     public double getPrecio(){
-        int precio = 0;
+        double precio = 0;
         for (Procesador procesador : procesadores){
             precio += procesador.getPrecio();
         }

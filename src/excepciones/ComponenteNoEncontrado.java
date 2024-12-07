@@ -1,5 +1,5 @@
 package excepciones;
-import dominio.*;
+import dominio.Componente;
 import java.io.*;
 
 /**

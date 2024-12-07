@@ -1,7 +1,5 @@
 package aplicacion;
-import dominio.*;
 import presentacion.Interfaz;
-import java.io.*;
 import excepciones.*;
 
 /**
@@ -14,6 +12,10 @@ public class Principal {
      * El método de ejecución del programa.
      *
      * @param args son los argumentos introducidos por el usuario mediante la terminal.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     * @throws MarcaNoEncontrada es la excepción para las marcas, ya sean de memorias o de procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     * @throws MarcaDuplicada es la excepción para los componentes, ya sean de memorias o de procesadores, que ya se encuentran en el catálogo.
      */
     public static void main(String[] args) throws ComponenteDuplicado, MarcaDuplicada, ComponenteNoEncontrado, MarcaNoEncontrada{
         Interfaz interfaz = new Interfaz();

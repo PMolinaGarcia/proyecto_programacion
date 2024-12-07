@@ -29,11 +29,9 @@ public class Marca implements Serializable {
      * El método setter del nombre de la marca.
      *
      * @param nombre El nombre de la marca.
-     * @return El objeto Marca con el nombre de la marca.
      */
-    public Marca setNombre(String nombre){
+    public void setNombre(String nombre){
         this.nombre=nombre;
-        return this;
     }
 
     /**

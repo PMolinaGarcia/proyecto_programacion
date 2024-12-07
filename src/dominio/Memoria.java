@@ -40,11 +40,9 @@ public class Memoria extends Componente implements Serializable{
     /**
      * Método setter de la capacidad de la memoria.
      * @param capacidad Capacidad de la memoria.
-     * @return La memoria con la capacidad actualizada.
      */
-    public Memoria setCapacidad(int capacidad){
+    public void setCapacidad(int capacidad){
         this.capacidad=capacidad;
-        return this;
     }
 
     /**

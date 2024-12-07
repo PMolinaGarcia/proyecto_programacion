@@ -14,6 +14,11 @@ public class Catalogo implements Serializable{
     private String nombre;
 
     /**
+     * Constructor vacío para posibles llamadas sin parámetros.
+     */
+    public Catalogo(){}
+
+    /**
      * Se crea un ArrayList que contenga las marcas.
      */
     //Creamos un ArrayList que contenga lo anterior
@@ -23,31 +28,31 @@ public class Catalogo implements Serializable{
      * Método para añadir marcas al catálogo.
      *
      * @param marca La marca que se va a añadir al catálogo.
-     * @return La marca añadida.
+     * @throws MarcaDuplicada es la excepción para los componentes, ya sean de memorias o de procesadores, que ya se encuentran en el catálogo.
+     *
      */
     //El método para añadir marcas al catálogo
-    public Catalogo addMarca(Marca marca) throws MarcaDuplicada {
+    public void addMarca(Marca marca) throws MarcaDuplicada {
         if (marcas.contains(marca))
             throw new MarcaDuplicada(marca);
 
         marcas.add(marca);
-        return this;
     }
 
     /**
      * Método para eliminar marcas del catálogo.
      *
      * @param marca La marca que se va a eliminar.
-     * @return El objeto catalogo con la marca eliminada.
+     * @throws MarcaNoEncontrada es la excepción para las marcas, ya sean de memorias o de procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     *
      */
     //El método para eliminar marcas del catálogo
-    public Catalogo elimMarca(Marca marca) throws MarcaNoEncontrada{
+    public void elimMarca(Marca marca) throws MarcaNoEncontrada{
         if (marcas.contains(marca)){
             marcas.remove(marca);
         }else {
             throw new MarcaNoEncontrada(marca);
         }
-        return this;
     }
 
     /**
@@ -108,8 +113,8 @@ public class Catalogo implements Serializable{
      * @return El precio total de todos los artículos del catálogo.
      */
     //Ahora calcularemos el precio total de todo el catálogo
-    public int getPrecio(){
-        int precio = 0;
+    public double getPrecio(){
+        double precio = 0;
         for (Marca marca : marcas) {
             precio += marca.getPrecio();
             }

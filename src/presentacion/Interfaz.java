@@ -60,6 +60,8 @@ public class Interfaz implements Serializable {
      * Métodos para añadir marcas.
      * Se escribe un texto a continuación del cual podemos escribir el nombre de la marca.
      * El scanner lee el valor y se imprime por pantalla.
+     * @throws MarcaDuplicada es la excepción para los componentes, ya sean de memorias o de procesadores, que ya se encuentran en el catálogo.
+     *
      */
     //Método para añadir marcas. Se escribe un texto a continuación del cual podemos escribir el nombre de la marca. El scanner lee el valor
     public void anniadirMarcaProcesador() throws MarcaDuplicada{
@@ -73,6 +75,8 @@ public class Interfaz implements Serializable {
      * Métodos para añadir marcas.
      * Se escribe un texto a continuación del cual podemos escribir el nombre de la marca.
      * El scanner lee el valor y se imprime por pantalla.
+     * @throws MarcaDuplicada es la excepción para los componentes, ya sean de memorias o de procesadores, que ya se encuentran en el catálogo.
+     *
      */
     public void anniadirMarcaMemoria() throws MarcaDuplicada{
         System.out.print("Escriba el nombre de la marca para anniadirla al catalogo: ");
@@ -83,6 +87,8 @@ public class Interfaz implements Serializable {
 
     /**
      * Método para eliminar marcas a partir de su nombre.
+     * @throws MarcaNoEncontrada es la excepción para las marcas, ya sean de memorias o de procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     *
      */
     public void elimMarca() throws MarcaNoEncontrada {
         System.out.print("Las marcas son: \n");
@@ -98,6 +104,8 @@ public class Interfaz implements Serializable {
     /**
      * Método para modificar marcas a partir de su posición.
      * Se utilizan los métodos setter para que, a partir de la marca de una determinada posicion del ArrayLista, podamos cambiar su nombre sin modificar lo que contiene.
+     * @throws MarcaNoEncontrada es la excepción para las marcas, ya sean de memorias o de procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     *
      */
     public void modMarca() throws MarcaNoEncontrada {
         System.out.print("Las marcas son: \n");
@@ -117,6 +125,8 @@ public class Interfaz implements Serializable {
      * Método para añadir procesadores a partir de los datos introducidos por el usuario.
      * Los datos son leídos por el escáner.
      * Hay que especificar la marca previamente.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     *
      */
     public void anniadirProcesador() throws ComponenteDuplicado{
         System.out.println("Las marcas disponibles son: \n");
@@ -144,6 +154,8 @@ public class Interfaz implements Serializable {
     /**
      * Método para eliminar procesadores a partir de su nombre.
      * Hay que especificar la posición de la marca previamente.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     *
      */
     public void elimProcesador() throws ComponenteNoEncontrado {
         System.out.println("Las marcas disponibles son: \n");
@@ -163,6 +175,10 @@ public class Interfaz implements Serializable {
     /**
      * Método para modificar procesadores a partir de su posición.
      * Se utilizan los métodos setter para que, a partir de la marca de una determinada posicion del ArrayList, podamos cambiar sus atributos.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     *
+     *
      */
     public void modProcesador() throws ComponenteNoEncontrado, ComponenteDuplicado {
         System.out.println("Las marcas disponibles son: \n");
@@ -199,6 +215,9 @@ public class Interfaz implements Serializable {
      * Los datos son leídos por el escáner.
      * Hay que especificar la marca previamente.
      * Se añade la opción de lanzar la excepción de que el componente se encuentra duplicado; es decir, que ya existe en la lista: en caso de que exista, se lanza la excepción; si no, se añade la memoria.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     *
+     *
      */
     public void anniadirMemoria() throws ComponenteDuplicado {
         System.out.println("Las marcas disponibles son: \n");
@@ -227,6 +246,8 @@ public class Interfaz implements Serializable {
      * Los datos son leídos por el escáner.
      * Hay que especificar la marca previamente.
      * Se añade la opción de lanzar la excepción de que el componente no se encuentra.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     *
      */
     public void elimMemoria() throws ComponenteNoEncontrado{
         System.out.println("Las marcas disponibles son: ");
@@ -246,6 +267,10 @@ public class Interfaz implements Serializable {
     /**
      * Método para modificar memorias a partir de su posición.
      * Se utilizan los métodos setter para que, a partir de la marca de una determinada posicion del ArrayList, podamos cambiar sus atributos.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     *
+     *
      */
     public void modMemoria() throws ComponenteNoEncontrado, ComponenteDuplicado {
         System.out.println("Las marcas disponibles son: \n");
@@ -280,6 +305,9 @@ public class Interfaz implements Serializable {
 
     /**
      * Método para leer todos los datos del catálogo.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     * @throws MarcaDuplicada es la excepción para los componentes, ya sean de memorias o de procesadores, que ya se encuentran en el catálogo.
+     *
      */
     public void leer() throws ComponenteDuplicado, MarcaDuplicada {
 
@@ -333,6 +361,11 @@ public class Interfaz implements Serializable {
      *
      * @param orden Orden introducida por el usuario mediante la terminal.
      * @return El valor de verdad. Si es falso, deja de ejecutarse el programa. Si es verdadero, se mantiene funcionando.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     * @throws MarcaNoEncontrada es la excepción para las marcas, ya sean de memorias o de procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     * @throws MarcaDuplicada es la excepción para los componentes, ya sean de memorias o de procesadores, que ya se encuentran en el catálogo.
+     *
      */
     public boolean procesarOrden(String[] orden) throws ComponenteDuplicado, ComponenteNoEncontrado, MarcaDuplicada, MarcaNoEncontrada {
         try {

@@ -30,29 +30,27 @@ public class MarcaMemoria extends Marca implements Serializable{
      * Incluye el lanzamiento de una excepción en caso de que el componente (en este caso, memoria) ya exista. Si existe, se lanza la excepción; si no, se añade.
      *
      * @param memoria La memoria que se va a añadir.
-     * @return El objeto Marca con la nueva memoria añadida.
+     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
+     *
      */
-    public MarcaMemoria addMemoria(Memoria memoria) throws ComponenteDuplicado {
+    public void addMemoria(Memoria memoria) throws ComponenteDuplicado {
         if (memorias.contains(memoria)) {
             throw new ComponenteDuplicado(memoria);
         }
         else {
             memorias.add(memoria);
-            return this;
         }
     }
 
     /**
      * El método para eliminar memorias de cada marca.
      * Incluye el lanzamiento de una excepción en caso de que no exista el componente (en este caso, la memoria) que se vaya a eliminar. Si existe, se procede a su eliminación; si no, se lanza la excepción.
-     *
      * @param memoria La memoria que se va a eliminar.
-     * @return El objeto marca con la memoria eliminada.
+     * @throws ComponenteNoEncontrado es la excepción para los componentes, ya sean memorias o procesadores, que pueden no haberse encontrado porque no existan en el catálogo.
      */
-    public MarcaMemoria elimMemoria(Memoria memoria) throws ComponenteNoEncontrado{
+    public void elimMemoria(Memoria memoria) throws ComponenteNoEncontrado{
         if (memorias.contains(memoria)){
             memorias.remove(memoria);
-            return this;
         }
         else {
             throw new ComponenteNoEncontrado(memoria);
@@ -75,7 +73,7 @@ public class MarcaMemoria extends Marca implements Serializable{
      * @return El precio total de todas las memorias de la marca (en euros).
      */
     public double getPrecio(){
-        int precio = 0;
+        double precio = 0;
         for (Memoria memoria : memorias){
             precio += memoria.getPrecio();
         }

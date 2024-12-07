@@ -8,10 +8,18 @@ import java.io.*;
 public class Componente implements Serializable {
 
     /**
-     * Definición de los atributos nombre, precio y generación, que serán comunes a todas las subclases de Componente.
+     * Definición del atributo nombre, que representa el nombre del componente.
      */
     protected String nombre;
+
+    /**
+     * Definición del atributo precio, que es un double que representa el precio del componente en euros. Es double para poder usar hasta dos decimales, como en un precio habitual.
+     */
     protected double precio;
+
+    /**
+     * Definición del atributo generación, que representa la generación de creación o venta del componente. Es String por si alguien prefiere escribir, por ejemplo, undécima en vez de 11.
+     */
     protected String generacion;
 
 
@@ -45,33 +53,27 @@ public class Componente implements Serializable {
      * Método setter para el nombre.
      *
      * @param nombre El nuevo nombre del componente.
-     * @return El objeto componente con el nuevo nombre.
      */
-    public Componente setNombre(String nombre){
+    public void setNombre(String nombre){
         this.nombre = nombre;
-        return this;
     }
 
     /**
      * Método setter para el precio.
      *
      * @param precio El nuevo precio del componente.
-     * @return El objeto componente con el nuevo precio.
      */
-    public Componente setPrecio(double precio){
+    public void setPrecio(double precio){
         this.precio = precio;
-        return this;
     }
 
     /**
      * Método setter para la generación.
      *
      * @param generacion La nueva generación del componente.
-     * @return El objeto componente con la nueva generación.
      */
-    public Componente setGeneracion(String generacion){
+    public void setGeneracion(String generacion){
         this.generacion = generacion;
-        return this;
     }
 
     /**
