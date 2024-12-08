@@ -51,7 +51,6 @@ public class Interfaz implements Serializable {
                 "\n elimMarca: elimina una marca. " +
                 "\n modMarca: para modificar el nombre de una marca. " +
                 "\n guardar: para guardar los datos en un archivo de guardado. " +
-                "\n leer: lectura inicial. " +
                 "\n lista: para mostrar por pantalla las marcas, procesadores y precios disponibles antes de guardar. " +
                 "\n exit: para salir y guardar los datos en un archivo de creacion automatica. \n");
     }
@@ -304,47 +303,6 @@ public class Interfaz implements Serializable {
     }
 
     /**
-     * Método para leer todos los datos del catálogo.
-     * @throws ComponenteDuplicado es la excepción para los componentes, ya sean memorias o procesadores, que ya se encuentran en el catálogo.
-     * @throws MarcaDuplicada es la excepción para los componentes, ya sean de memorias o de procesadores, que ya se encuentran en el catálogo.
-     *
-     */
-    public void leer() throws ComponenteDuplicado, MarcaDuplicada {
-
-        String nombreM, nombreP;
-        c.setNombre("Catalogo");
-        do {
-            System.out.print("Introduce el nombre de la marca (<enter> para finalizar): ");
-            nombreM = sc.nextLine();
-            if (!nombreM.equals("")) {
-                MarcaProcesador marca = new MarcaProcesador(nombreM);
-                do {
-                    System.out.print("Introduce el nombre del procesador (<enter> para finalizar): ");
-                    nombreP = sc.nextLine();
-                    if (!nombreP.equals("")) {
-                        System.out.print("Introduce el precio del procesador (<enter> para finalizar): ");
-                        int precio = sc.nextInt();
-                        sc.nextLine();
-                        System.out.print("Introduce el numero de generacion del procesador (<enter> para finalizar): ");
-                        String generacion = sc.nextLine();
-                        sc.nextLine();
-                        int nucleos = sc.nextInt();
-                        sc.nextLine();
-                        System.out.print("Introduce el numero de nucleos del procesador (<enter> para finalizar): ");
-                        Procesador procesador = new Procesador(nombreP, generacion, precio, nucleos);
-                        marca.addProcesador(procesador);
-                    }
-
-                }
-                while (!nombreP.equals(""));
-                c.addMarca(marca);
-
-            }
-        } while (!nombreM.equals(""));
-    }
-
-
-    /**
      * Método para que el programa lea la orden que le pasa el usuario.
      *
      * @return La orden introducida por el usuario.
@@ -393,8 +351,7 @@ public class Interfaz implements Serializable {
                 else if (orden[0].equals("lista")) {
                     c.setNombre("Catálogo\n");
                     System.out.println(this.c);
-                } else if (orden[0].equals("leer"))
-                    leer();
+                }
                 else if (orden[0].equals("ayuda"))
                     ayuda();
                 else if (orden[0].equals("guardar"))
