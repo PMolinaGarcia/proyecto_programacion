@@ -1,7 +1,6 @@
 package dominio;
 import java.util.ArrayList;
 import java.io.*;
-import java.util.Objects;
 
 import excepciones.*;
 
@@ -88,35 +87,6 @@ public class MarcaMemoria extends Marca implements Serializable{
     public int getMemorias(){
         return memorias.size();
     }
-
-
-    /**
-     * Se sobreescribe el método equals para comparar únicamente mediante los nombres de los objetos, de tal forma que dos marcas se comparen por su nombre, no por ser MarcaProcesador de clase o MarcaMemoria
-     * @param obj El objeto cualquiera.
-     * @return Objeto igual a otro objeto.
-     */
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
-        if (obj instanceof Marca) {
-            Marca other = (Marca) obj;
-            return Objects.equals(nombre, other.nombre);
-        }
-        return false;
-    }
-
-    /**
-     * Se sobreescribe el método hashCode que venía por defecto.
-     * @return Un nuevo entero que será utilizado para organizar los objetos.
-     */
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), nombre);
-    }
-
 
     /**
      * El método toString en forma de StringBuilder para devolver los datos de la marca.
